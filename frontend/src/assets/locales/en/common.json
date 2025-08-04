@@ -1,0 +1,287 @@
+{
+  "pages": {
+    "login": {
+      "page-title": "Login",
+      "app-name": "Health-Care",
+      "title": "Sign in to your account",
+      "signin": "Sign in",
+      "signup": "Sign up",
+      "divider": "or",
+      "fields": {
+        "userId": "User ID",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required",
+        "requiredPassword": "Password is required"
+      },
+      "buttons": {
+        "submit": "Login",
+        "forgotPassword": "Forgot password?",
+        "noAccount": "Don’t have an account?",
+        "rememberMe": "Remember me"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "fields": {
+        "email": "Email"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required"
+      },
+      "buttons": {
+        "submit": "Send reset instructions"
+      }
+    },
+    "register": {
+      "title": "Sign up for your account",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required",
+        "requiredPassword": "Password is required"
+      },
+      "buttons": {
+        "submit": "Register",
+        "haveAccount": "Have an account?"
+      }
+    },
+    "updatePassword": {
+      "title": "Update password",
+      "fields": {
+        "password": "New Password",
+        "confirmPassword": "Confirm new password"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Passwords do not match",
+        "requiredPassword": "Password required",
+        "requiredConfirmPassword": "Confirm password is required"
+      },
+      "buttons": {
+        "submit": "Update"
+      }
+    },
+    "error": {
+      "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
+      "404": "Sorry, the page you visited does not exist.",
+      "resource404": "Are you sure you have created the {{resource}} resource.",
+      "backHome": "Back Home"
+    },
+    "nested-scenarios": {
+      "add_group": "Add Group",
+      "add_sub_group": "Add Sub-Group",
+      "add_scenario": "Add Scenario",
+      "field39": "Field39",
+      "mti": "MTI",
+      "prc": "Prc"
+    },
+    "iso-message-groups": {
+      "first-level-title": "Message Groups",
+      "second-level-title": "Sub-Groups",
+      "third-level-title": "Messages",
+      "fields": {
+        "id": "id",
+        "name": "name",
+        "format": "format",
+        "fields": "fields",
+        "actions": "actions"
+      }
+    }
+  },
+  "actions": "Actions",
+  "buttons": {
+    "create": "Create",
+    "save": "Save",
+    "logout": "Logout",
+    "delete": "Delete",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "confirm": "Are you sure?",
+    "filter": "Filter",
+    "clear": "Clear",
+    "refresh": "Refresh",
+    "show": "Show",
+    "undo": "Undo",
+    "import": "Import",
+    "clone": "Clone",
+    "send": "Send",
+    "notAccessTitle": "You don't have permission to access"
+  },
+  "data-grid": {
+    "toolbar": {
+      "filters": "filters",
+      "columns": "columns",
+      "operator": "operator",
+      "input": "input",
+      "value": "value",
+      "contains": "contains",
+      "sort-asc": "sort-asc",
+      "sort-desc": "sort-desc",
+      "unsort": "unsort"
+    }
+  },
+  "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",
+  "notifications": {
+    "success": "Successful",
+    "error": "Error (status code: {{statusCode}})",
+    "undoable": "You have {{seconds}} seconds to undo",
+    "createSuccess": "Successfully created {{resource}}",
+    "createError": "There was an error creating {{resource}} (status code: {{statusCode}})",
+    "deleteSuccess": "Successfully deleted {{resource}}",
+    "deleteError": "Error when deleting {{resource}} (status code: {{statusCode}})",
+    "editSuccess": "Successfully edited {{resource}}",
+    "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
+    "importProgress": "Importing: {{processed}}/{{total}}"
+  },
+  "loading": "Loading",
+  "tags": {
+    "clone": "Clone"
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "posts": {
+    "posts": "Posts",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "Create Post",
+      "edit": "Edit Post",
+      "list": "Posts",
+      "show": "Show Post"
+    }
+  },
+  "table": {
+    "id": "ID",
+    "name": "Name",
+    "actions": "Actions"
+  },
+  "documentTitle": {
+    "default": "Health-Care",
+    "suffix": " | Health-Care",
+    "post": {
+      "list": "Posts | Health-Care",
+      "show": "#{{id}} Show Post | Health-Care",
+      "edit": "#{{id}} Edit Post | Health-Care",
+      "create": "Create new Post | Health-Care",
+      "clone": "#{{id}} Clone Post | Health-Care"
+    }
+  },
+  "autoSave": {
+    "success": "saved",
+    "error": "auto save failure",
+    "loading": "saving...",
+    "idle": "waiting for changes"
+  },
+  "layout": {
+    "page": {
+      "clientList": {
+        "title": "Client List"
+      }
+    },
+    "header": {
+      "title": "Health-Care",
+      "change_language":"Change language"
+    },
+    "sidebar": {
+      "definitions": "Definitions",
+      "tcp-states": "Socket States",
+      "formats": "Formats",
+      "ports": "Ports",
+      "servers": "Servers",
+      "remote-servers": "Remote Servers",
+      "auto-start": "Auto Start",
+      "messages": "Message History",
+      "scenario-groups": "Resp Scenarios",
+      "test-cases": "Test Cases",
+      "isomessages": "Test Cases",
+      "message-groups": "Test Case Groups",
+      "stress": "Stress Test",
+      "stress-build": "Build Requirements",
+      "stress-build-batch": "Build Batches",
+      "stress-build-generate-cards": "Build Cards",
+      "stress-scenarios": "Define Test Cases",
+      "stress-scenario-groups": "Scenario Groups",
+      "stress-scenario-sub-groups": "Scenario Sub-Groups",
+      "stress-scenario-messages": "Scenario ISO-Messages",
+      "stress-scenario-scenarios": "Scenarios",
+      "stress-run": "Stress Run",
+      "stress-report": "Stress Report",
+      "stress-build-cards": "Cards",
+      "client-list": "Client List"
+    },
+    "dashboard": {
+      "messages": {
+        "sorters": "Sorters",
+        "filters": "Filters",
+        "and": "And",
+        "sort_asc": "date create asc",
+        "filter_1200": "1200s",
+        "filter_1100": "1100s",
+        "filter_1400": "1400s",
+        "filter_failed": "Failed",
+        "filter_approved": "Approved",
+        "filter_today": "Today",
+        "filter_past30min": "Past 30Min",
+        "filter_shetab": "Shetab",
+        "filter_host": "Host",
+        "filter_utimaco": "Utimaco",
+        "received_from": "received from",
+        "send_to": "send to",
+        "request": "request:",
+        "approved": "Approved:",
+        "error": "Error:",
+        "timeout": "Time-Out:",
+        "okrev": "Ok-Rev:",
+        "stan": "Stan:",
+        "tooltip_mti": "MTI",
+        "tooltip_field_value": "Field - Value",
+        "message_per_page": "Messages per page",
+        "rows_display": "from {{from}} - to {{to}} of total{{count}} messages",
+        "sort_desc": "date create desc",
+        "desc":{
+          "operation request form": "درخواست از طریق فرم",
+          "request from form": "درخواست از طریق فرم",
+          "request from line": "درخواست ورودی",
+          "delay-response": "پاسخ با سناریوی {{group}} {{id}} با تاخیر",
+          "delayed response using scenario": "پاسخ با سناریو و تاخیر",
+          "response using scenario": "پاسخ با سناریو",
+          "response": "پاسخ با سناریوی {{group}} {{id}}"
+        },
+        "field_list":{
+          "no_fields_available": "No fields available",
+          "iso_message_fields": "ISO Message Fields ({{count}} fields)",
+          "field_number": "Field #",
+          "field_value": "Value", 
+          "field_length": "Length",
+          "field_empty": "Empty",
+          "not_available": "N/A",
+          "copy_stan": "Copy STAN",
+          "copy_mti": "Copy MTI", 
+          "description": "Description",
+          "server_information": "Server Information",
+          "copy_server_info": "Copy Server Info",
+          "get_hex_string": "Get Hex String",
+          "send_to_client": "Send To A Client"
+        }
+      }
+    }
+  }
+}
