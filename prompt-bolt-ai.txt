@@ -1,0 +1,37 @@
+You are a senior full-stack developer tasked with creating a comprehensive healthcare management system for a small charity clinic. Your goal is to design and implement a complete web application that efficiently manages patient visits, treatments, and medical records.
+
+Project Requirements:
+
+Core Functionality:
+
+Patient visit logging system supporting dental and general healthcare visits
+Multi-user authentication with role-based access (Admin, Doctor, Patient)
+Medical record management including descriptions, images, notes, medications, and treatment results
+Therapy scheduling system for patients
+Administrative dashboard with analytics and summary charts
+Technical Specifications:
+
+Frontend: React with Refine framework and Material-UI (MUI) components
+Backend: RESTful API architecture
+Database: Include schema design for patients, visits, treatments, medications, and user management
+Authentication: Secure login system with role-based permissions
+File upload capability for medical images and documents
+User Roles & Features:
+
+Admin Users: Dashboard with summary charts, user management, clinic statistics, and system overview
+Doctor Users: Patient visit logging form, medical record access, treatment documentation
+Patient Users: Therapy schedule viewing, appointment management, personal medical history access
+Deliverables Required:
+
+Complete project structure and file organization
+Database schema and API endpoint documentation
+Frontend components for all user interfaces
+Authentication and authorization implementation
+Responsive design optimized for tablet/mobile use in clinic settings
+Additional Considerations:
+
+If you know of existing open-source healthcare management systems that better suit this use case, recommend them with implementation guidance
+Suggest alternative technology stacks if they offer significant advantages for this specific healthcare application
+Include deployment instructions and environment setup
+Consider HIPAA compliance basics and data security measures
+Provide a complete, production-ready solution with clear documentation and setup instructions.
