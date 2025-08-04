@@ -1,0 +1,8 @@
+docker run \
+  -d -p 5432:5432 \
+  -v "healthcare:/var/lib/postgresql/data" \
+  --name healthcare -e POSTGRES_DB=healthcare -e POSTGRES_USER=hca -e POSTGRES_PASSWORD=hca \
+  postgres:latest \
+  -c ssl=on \
+  -c ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem \
+  -c ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key

@@ -1,0 +1,6 @@
+
+    health-care:
+        dbType: postgresql
+        dbAddress:
+            value: 4KnxD0cginLKM65dEp8x2MKsytl/sOnb6IqswKeLZqQpAJ9qjkGJnj7MbJE27tgaH2Tzm2CSRcicF4a59oQnIQduApVg/Qy6IS9yA3dubXP7pkvITUVcLyeB1wQL/2y9
+            plain: postgresql://hca:hca@localhost:5432/healthcare?connect_timeout=10&application_name=HealthCare

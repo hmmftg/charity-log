@@ -1,0 +1,287 @@
+{
+  "pages": {
+    "login": {
+      "page-title": "ورود",
+      "app-name": "شبیه ساز",
+      "title": "ورود به حساب کاربری",
+      "signin": "ورود",
+      "signup": "ثبت نام",
+      "divider": "یا",
+      "fields": {
+        "userId": "نام کاربری",
+        "password": "رمز ورود"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required",
+        "requiredPassword": "Password is required"
+      },
+      "buttons": {
+        "submit": "ورود",
+        "forgotPassword": "رمز خود را فراموش کرده اید؟",
+        "noAccount": "قبلا حساب کاربری نساخته اید؟",
+        "rememberMe": "مرا به یاد بیاور"
+      }
+    },
+    "forgotPassword": {
+      "title": "رمز خود را فراموش کرده اید؟",
+      "fields": {
+        "email": "Email"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required"
+      },
+      "buttons": {
+        "submit": "Send reset instructions"
+      }
+    },
+    "register": {
+      "title": "Sign up for your account",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address",
+        "requiredEmail": "Email is required",
+        "requiredPassword": "Password is required"
+      },
+      "buttons": {
+        "submit": "ثبتنام",
+        "haveAccount": "Have an account?"
+      }
+    },
+    "updatePassword": {
+      "title": "Update password",
+      "fields": {
+        "password": "New Password",
+        "confirmPassword": "Confirm new password"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Passwords do not match",
+        "requiredPassword": "Password required",
+        "requiredConfirmPassword": "Confirm password is required"
+      },
+      "buttons": {
+        "submit": "Update"
+      }
+    },
+    "error": {
+      "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
+      "404": "Sorry, the page you visited does not exist.",
+      "resource404": "Are you sure you have created the {{resource}} resource.",
+      "backHome": "Back Home"
+    },
+    "nested-scenarios": {
+      "add_group": "ساخت گروه جدید",
+      "add_sub_group": "ساخت زیر گروه جدید",
+      "add_scenario": "تعریف سناریوی جدید",
+      "field39": "پاسخ",
+      "mti": "کد",
+      "prc": "کدپردازش"
+    },
+    "iso-message-groups": {
+      "first-level-title": "گروه پیام",
+      "second-level-title": "زیرگروه پیام",
+      "third-level-title": "لیست پیام ها",
+      "fields": {
+        "id": "شناسه",
+        "name": "نام",
+        "format": "فرمت",
+        "fields": "فیلدها",
+        "actions": "عملیات ها"
+      }
+    }
+  },
+  "actions": "عملیات ها",
+  "buttons": {
+    "create": "ساخت رکورد جدید",
+    "save": "ذخیره",
+    "logout": "خروج",
+    "delete": "حذف",
+    "edit": "ویرایش",
+    "cancel": "لغو",
+    "confirm": "آیا مطمئن هستید؟",
+    "filter": "فیلتر",
+    "clear": "Clear",
+    "refresh": "بازنشانی",
+    "show": "نمایش",
+    "undo": "Undo",
+    "import": "Import",
+    "clone": "کپی رکورد",
+    "send": "ارسال",
+    "notAccessTitle": "You don't have permission to access"
+  },
+  "data-grid": {
+    "toolbar": {
+      "filters": "فیلتر",
+      "columns": "ستون",
+      "operator": "عملگر",
+      "input": "ورودی",
+      "value": "مقدار",
+      "contains": "شامل",
+      "sort-asc": "مرتب سازی از کوچکتر",
+      "sort-desc": "مرتب سازی از بزرگتر",
+      "unsort": "لغو مرتب سازی"
+    }
+  },
+  "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",
+  "notifications": {
+    "success": "موفق",
+    "error": "خطا (کد خطا: {{statusCode}})",
+    "undoable": "You have {{seconds}} seconds to undo",
+    "createSuccess": "Successfully created {{resource}}",
+    "createError": "There was an error creating {{resource}} (status code: {{statusCode}})",
+    "deleteSuccess": "Successfully deleted {{resource}}",
+    "deleteError": "Error when deleting {{resource}} (status code: {{statusCode}})",
+    "editSuccess": "Successfully edited {{resource}}",
+    "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
+    "importProgress": "Importing: {{processed}}/{{total}}"
+  },
+  "loading": "Loading",
+  "tags": {
+    "clone": "Clone"
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "posts": {
+    "posts": "Posts",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "Create Post",
+      "edit": "Edit Post",
+      "list": "Posts",
+      "show": "Show Post"
+    }
+  },
+  "table": {
+    "id": "شناسه",
+    "name": "نام",
+    "actions": "عملیات ها"
+  },
+  "documentTitle": {
+    "default": "شبیه ساز",
+    "suffix": " | شبیه ساز",
+    "post": {
+      "list": "Posts | شبیه ساز",
+      "show": "#{{id}} Show Post | شبیه ساز",
+      "edit": "#{{id}} Edit Post | شبیه ساز",
+      "create": "Create new Post | شبیه ساز",
+      "clone": "#{{id}} Clone Post | شبیه ساز"
+    }
+  },
+  "autoSave": {
+    "success": "saved",
+    "error": "auto save failure",
+    "loading": "saving...",
+    "idle": "waiting for changes"
+  },
+  "layout": {
+    "page": {
+      "clientList": {
+        "title": "اتصالات موجود"
+      }
+    },
+    "header": {
+      "title": "شبیه ساز پیام",
+      "change_language":"تغییر زبان"
+    },
+    "sidebar": {
+      "definitions": "تعاریف پایه",
+      "tcp-states": "وضعیت اتصال",
+      "formats": "فرمت پیام",
+      "ports": "پورت",
+      "servers": "سرور های شبیه ساز",
+      "remote-servers": "سرور های بیرونی",
+      "auto-start": "شروع خودکار",
+      "messages": "پیام های تبادل شده",
+      "scenario-groups": "سناریوهای پاسخ",
+      "test-cases": "پیام های پیش ساخته",
+      "isomessages": "پیام ها",
+      "message-groups": "گروه بندی پیام",
+      "stress": "استرس تست",
+      "stress-build": "تولید پیش نیازها",
+      "stress-build-batch": "بچ تولید پیش نیاز",
+      "stress-build-generate-cards": "تولید کارت",
+      "stress-scenarios": "تعریف پیام ها",
+      "stress-scenario-groups": "گروه بندی پیام ها",
+      "stress-scenario-sub-groups": "زیر گروه های پیام",
+      "stress-scenario-messages": "پیام ها",
+      "stress-scenario-scenarios": "سناریوهای ارسال پیام",
+      "stress-run": "اجرای استرس تست",
+      "stress-report": "گزارش",
+      "stress-build-cards": "لیست کارت های تولید شده",
+      "client-list": "لیست اتصالات موجود"
+    },
+    "dashboard": {
+      "messages": {
+        "sorters": "مرتب سازی",
+        "filters": "فیلتر",
+        "and": "و",
+        "filter_1200": "مالی",
+        "filter_1100": "اطلاعاتی",
+        "filter_1400": "برگشت",
+        "filter_failed": "ناموفق",
+        "filter_approved": "موفق",
+        "filter_today": "امروز",
+        "filter_past30min": "نیم ساعت پیش",
+        "filter_shetab": "شتاب",
+        "filter_host": "هاست",
+        "filter_utimaco": "یوتیماکو",
+        "received_from": "دریافتی از",
+        "send_to": "ارسالی به",
+        "request": "درخواست:",
+        "approved": "موفق:",
+        "error": "ناموفق:",
+        "timeout": "پاسخ با تأخیر",
+        "okrev": "برگشت موفق:",
+        "sort_asc": "تاریخ صعودی",
+        "tooltip_mti": "نوع پیام",
+        "stan": "کد پیگیری:",
+        "tooltip_field_value": "فیلد - مقدار",
+        "message_per_page": "تعداد پیام در هر صفحه",
+        "rows_display": " از پیام {{from}} - تا {{to}} از مجموع {{count}} پیام",
+        "sort_desc": "تاریخ نزولی",
+        "desc":{
+          "operation request form": "درخواست از طریق فرم",
+          "request from form": "درخواست از طریق فرم",
+          "request from line": "درخواست ورودی",
+          "delay-response": "پاسخ با سناریوی {{group}} {{id}} با تاخیر",
+          "delayed response using scenario": "پاسخ با سناریو و تاخیر",
+          "response using scenario": "پاسخ با سناریو",
+          "response": "پاسخ با سناریوی {{group}} {{id}}"
+        },
+        "field_list":{
+          "no_fields_available": "فیلد قابل نمایشی وجود ندارد",
+          "iso_message_fields": "فیلدهای پیام ISO ({{count}} فیلد)",
+          "field_number": "فیلد ",
+          "field_value": "مقدار", 
+          "field_length": "طول",
+          "field_empty": "خالی",
+          "not_available": "ناموجود",
+          "copy_stan": "کپی کد رهگیری",
+          "copy_mti": "کپی کد پیام", 
+          "description": "شرح",
+          "server_information": "مشخصات سرور",
+          "copy_server_info": "کپی مشخصات سرور",
+          "get_hex_string": "دریافت متن Hex",
+          "send_to_client": "ارسال به کلاینت موجود"
+        }
+      }
+    }
+  }
+}

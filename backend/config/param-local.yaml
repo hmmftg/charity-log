@@ -1,0 +1,48 @@
+networks:
+    healthcare:
+        port: "9090"
+        staticPort: "9090"
+        staticPath: /home/hamid/Projects/charity-log/frontend/dist
+        tlsPort: ""
+        tlsKey: ""
+        tlsCert: ""
+logging:
+    logPath: ""
+    logSize: 0
+    logCompress: false
+    skipPaths:
+        - /api/clients/all
+    logHeader: ""
+    useSlog: false
+    splunkParams: null
+db:
+    healthcare:
+        dbType: postgres
+        dbAddress:
+            value: 4KnxD0cginLKM65dEp8x2MKsytl/sOnb6IqswKeLZqQpAJ9qjkGJnj7MbJE27tgaH2Tzm2CSRcicF4a59oQnIQduApVg/Qy6IS9yA3dubXP7pkvITUVcLyeB1wQL/2y9
+securityModule: {}
+remoteApis:
+    healthcare:
+        domain: ""
+        name: ""
+        auth:
+            grant-type: ""
+            user: ""
+            password: ""
+            client-id: ""
+            client-secret: ""
+            auth-uri: ""
+        options: {}
+constants:
+    healthcare:
+        errorDesc: {}
+        messageDesc: {}
+parameterGroups:
+    healthcare:
+        params: {}
+secureParameterGroups:
+    healthcare:
+        secureParams: {}
+specific:
+    staticBaseUrl: /ui
+metrics: null
