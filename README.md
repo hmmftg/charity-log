@@ -130,21 +130,48 @@ For testing purposes, create these accounts in Supabase Auth:
 
 ## 🚀 Production Deployment
 
-### Recommended Deployment Stack
-1. **Frontend**: Netlify or Vercel for static hosting
+### Quick Vercel Deployment (Recommended for Demo)
+
+1. **Deploy to Vercel**:
+   ```bash
+   # Install Vercel CLI
+   npm install -g vercel
+   
+   # Navigate to frontend directory
+   cd frontend
+   
+   # Deploy
+   vercel --prod
+   ```
+
+2. **Or use the deployment script**:
+   ```bash
+   # Windows
+   deploy-vercel.bat
+   
+   # Linux/Mac
+   ./deploy-vercel.sh
+   ```
+
+3. **Set Environment Variables in Vercel Dashboard**:
+   ```env
+   VITE_APP_NAME=Healthcare Management System
+   VITE_APP_VERSION=1.0.0
+   VITE_APP_ENV=production
+   VITE_DEMO_MODE=true
+   VITE_SHOW_DEMO_DATA=true
+   VITE_ENABLE_MOCK_DATA=true
+   ```
+
+### Alternative Deployment Options
+1. **Frontend**: Netlify, Vercel, or GitHub Pages
 2. **Database**: Supabase Pro for production workloads
 3. **CDN**: Cloudflare for global content delivery
 4. **Monitoring**: Sentry for error tracking and performance
 
-### Environment Variables (Production)
-```env
-VITE_APP_ENV=production
-VITE_SUPABASE_URL=your_production_supabase_url
-VITE_SUPABASE_ANON_KEY=your_production_anon_key
-```
-
 ### Build Command
 ```bash
+cd frontend
 npm run build
 ```
 
