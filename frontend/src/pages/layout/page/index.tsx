@@ -1,10 +1,10 @@
 import React from "react";
-import { ThemedLayoutV2, ThemedTitleV2 } from "@refinedev/mui";
-import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
+import { ThemedLayout, ThemedTitle } from "@refinedev/mui";
+import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import { Authenticated, useTranslate } from "@refinedev/core";
 import { CatchAllNavigate } from "@refinedev/react-router";
-import { Grid2 } from "@mui/material";
-import { Header } from "../../../components";
+import { Box } from "@mui/material";
+import { Header } from "../../../components/header/Header";
 import { Footer } from "../../../components";
 
 export interface PageParams {
@@ -15,14 +15,14 @@ export const Page: React.FC<PageParams> = ({ children }) => {
   const translate = useTranslate();
   return (
     <>
-      <ThemedLayoutV2
+      <ThemedLayout
         Header={Header}
         Title={({ collapsed }) => (
-          <ThemedTitleV2
+          <ThemedTitle
             // collapsed is a boolean value that indicates whether the <Sidebar> is collapsed or not
             collapsed={collapsed}
-            icon={<SettingsSuggestIcon fontSize="large" />}
-            text={translate("layout.header.title")}
+            icon={<LocalHospitalIcon fontSize="large" />}
+            text="Healthcare System"
           />
         )}
         Footer={Footer}
@@ -31,11 +31,11 @@ export const Page: React.FC<PageParams> = ({ children }) => {
           key={children.type.toString()}
           fallback={<CatchAllNavigate to={`/login`} />}
         >
-          <Grid2 container columns={1} spacing={2}>
-            <Grid2 size={6}>{children}</Grid2>
-          </Grid2>
+          <Box sx={{ minHeight: "100vh", background: "transparent" }}>
+            {children}
+          </Box>
         </Authenticated>
-      </ThemedLayoutV2>
+      </ThemedLayout>
     </>
   );
 };

@@ -33,7 +33,7 @@ dayjs.extend(relativeTime);
 dayjs.extend(jalaliday);
 dayjs.extend(localizedFormat);
 
-import umsAuthProvider from "./providers/ums/umsAuthProvider"
+import { authProvider } from "./providers/ums/authProvider";
 import { Page } from "./pages/layout/page";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import { AppResources, AppRoutes } from "./resources";
@@ -110,12 +110,14 @@ function App() {
                     resources={AppResources(i18nProvider.translate)}
                     notificationProvider={useNotificationProvider}
                     routerProvider={routerBindings}
-                    authProvider={umsAuthProvider}
+                    authProvider={authProvider}
                     i18nProvider={i18nProvider}
                     options={{
                       syncWithLocation: true,
                       warnWhenUnsavedChanges: true,
                       useNewQueryKeys: true,
+                      metrics: true,
+                      disableTelemetry: true,
                       projectId: "He9np2-eJT4qT-Ce1wrs",
                     }}
                   >
@@ -131,7 +133,7 @@ function App() {
                         <Route
                           index
                           element={
-                            <NavigateToResource resource="definitions/patient" />
+                            <NavigateToResource resource="dashboard" />
                           }
                         />
                         {AppRoutes()}

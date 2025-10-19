@@ -1,32 +1,53 @@
-import RocketLaunchTwoToneIcon from "@mui/icons-material/RocketLaunchTwoTone";
-import { Route } from "react-router";
+import React from "react";
+import { Route } from 'react-router';
 import { ResourceProps } from "@refinedev/core";
-import { PrescriptionResources, PrescriptionRoutes } from "./prescription";
-import { VisitResources, VisitRoutes } from "./visit";
+import { VisitLogging } from "../../components/visits/VisitLogging";
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+
+export const VisitLoggingPage: React.FC = () => {
+  const handleSaveVisit = (visitData: any) => {
+    console.log("Saving visit:", visitData);
+    // Save visit data to backend
+  };
+
+  const handleCancel = () => {
+    console.log("Cancelling visit logging");
+    // Navigate back or reset form
+  };
+
+  return (
+    <VisitLogging
+      onSaveVisit={handleSaveVisit}
+      onCancel={handleCancel}
+    />
+  );
+};
 
 export function VisitsResources(
   translate: (key: string, options?: any, defaultMessage?: string) => string
 ): ResourceProps[] {
-  const name = "visits"
   return [
     {
-      name: name,
+      name: "visits",
+      list: "/visits",
+      create: "/visits/create",
+      edit: "/visits/edit/:id",
+      show: "/visits/show/:id",
       meta: {
-        canDelete: true,
-        icon: <RocketLaunchTwoToneIcon />,
-        label: translate("layout.sidebar.visits"),
+        icon: <LocalHospitalIcon />,
+        label: "Visits",
       },
     },
-    ...VisitResources(translate, name),
-    ...PrescriptionResources(translate, name),
   ];
 }
 
 export function VisitsRoutes() {
   return (
-    <Route path="visits">
-      {VisitRoutes()}
-      {PrescriptionRoutes()}
-    </Route>
+    <>
+      <Route path="/visits" element={<VisitLoggingPage />} />
+      <Route path="/visits/create" element={<VisitLoggingPage />} />
+      <Route path="/visits/edit/:id" element={<VisitLoggingPage />} />
+      <Route path="/visits/show/:id" element={<VisitLoggingPage />} />
+    </>
   );
 }
