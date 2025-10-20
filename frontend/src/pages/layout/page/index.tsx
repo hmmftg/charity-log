@@ -6,6 +6,7 @@ import { CatchAllNavigate } from "@refinedev/react-router";
 import { Box } from "@mui/material";
 import { Header } from "../../../components/header/Header";
 import { Footer } from "../../../components";
+import { RoleBasedSidebar } from "../../../components/sidebar/RoleBasedSidebar";
 
 export interface PageParams {
   children: React.ReactElement;
@@ -17,6 +18,7 @@ export const Page: React.FC<PageParams> = ({ children }) => {
     <>
       <ThemedLayout
         Header={Header}
+        Sider={RoleBasedSidebar}
         Title={({ collapsed }) => (
           <ThemedTitle
             // collapsed is a boolean value that indicates whether the <Sidebar> is collapsed or not

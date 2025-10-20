@@ -44,6 +44,7 @@ import {
   Delete as DeleteIcon,
 } from "@mui/icons-material";
 import { useTranslate } from "@refinedev/core";
+import { FileUpload } from "../file-upload/FileUpload";
 
 interface VisitFormData {
   patientId: string;
@@ -117,6 +118,8 @@ export const VisitLogging: React.FC<VisitLoggingProps> = ({
     "Symptoms & Diagnosis",
     "Treatment & Medications",
     "Vital Signs & Notes",
+    "Medical Files & Images",
+    "Review & Save",
   ];
 
   const handleNext = () => {
@@ -406,6 +409,125 @@ export const VisitLogging: React.FC<VisitLoggingProps> = ({
               />
             </Grid2>
           </Grid2>
+        );
+
+      case 4:
+        return (
+          <Box>
+            <Typography variant="h6" sx={{ mb: 3 }}>
+              Medical Files & Images
+            </Typography>
+            <Typography variant="body2" sx={{ color: theme.palette.text.secondary, mb: 3 }}>
+              Upload medical images, lab results, X-rays, or other relevant documents for this visit.
+            </Typography>
+            <FileUpload
+              onFilesUploaded={(files) => {
+                console.log("Files uploaded:", files);
+                // TODO: Handle file uploads
+              }}
+              maxFiles={10}
+              maxFileSize={20}
+              acceptedTypes={['image/jpeg', 'image/png', 'image/gif', 'application/pdf', 'image/dicom']}
+              title="Upload Medical Files"
+              description="Upload medical images, lab results, X-rays, or other relevant documents"
+            />
+          </Box>
+        );
+
+      case 5:
+        return (
+          <Box>
+            <Typography variant="h6" sx={{ mb: 3 }}>
+              Review & Save Visit
+            </Typography>
+            
+            {/* Visit Summary */}
+            <Card sx={{ mb: 3 }}>
+              <CardContent>
+                <Typography variant="h6" sx={{ mb: 2 }}>
+                  Visit Summary
+                </Typography>
+                <Grid2 container spacing={2}>
+                  <Grid2 size={12} md={6}>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Patient: {mockPatients.find(p => p.id === visitData.patientId)?.full_name || 'Not selected'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Doctor: {mockDoctors.find(d => d.id === visitData.doctorId)?.full_name || 'Not selected'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Visit Type: {visitData.visitType || 'Not selected'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Date: {visitData.visitDate || 'Not set'}
+                    </Typography>
+                  </Grid2>
+                  <Grid2 size={12} md={6}>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Chief Complaint: {visitData.chiefComplaint || 'Not specified'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Diagnosis: {visitData.diagnosis || 'Not specified'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Medications: {visitData.medications.length} prescribed
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Follow-up: {visitData.followUpDate || 'Not scheduled'}
+                    </Typography>
+                  </Grid2>
+                </Grid2>
+              </CardContent>
+            </Card>
+
+            {/* Vital Signs Summary */}
+            <Card sx={{ mb: 3 }}>
+              <CardContent>
+                <Typography variant="h6" sx={{ mb: 2 }}>
+                  Vital Signs
+                </Typography>
+                <Grid2 container spacing={2}>
+                  <Grid2 size={12} md={6}>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Blood Pressure: {visitData.vitalSigns.bloodPressure || 'Not recorded'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Heart Rate: {visitData.vitalSigns.heartRate || 'Not recorded'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Temperature: {visitData.vitalSigns.temperature || 'Not recorded'}
+                    </Typography>
+                  </Grid2>
+                  <Grid2 size={12} md={6}>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Weight: {visitData.vitalSigns.weight || 'Not recorded'}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                      Height: {visitData.vitalSigns.height || 'Not recorded'}
+                    </Typography>
+                  </Grid2>
+                </Grid2>
+              </CardContent>
+            </Card>
+
+            {/* Notes Summary */}
+            {visitData.notes && (
+              <Card sx={{ mb: 3 }}>
+                <CardContent>
+                  <Typography variant="h6" sx={{ mb: 2 }}>
+                    Additional Notes
+                  </Typography>
+                  <Typography variant="body2">
+                    {visitData.notes}
+                  </Typography>
+                </CardContent>
+              </Card>
+            )}
+
+            <Alert severity="info" sx={{ mb: 3 }}>
+              Please review all information before saving. Once saved, the visit record will be created and cannot be modified.
+            </Alert>
+          </Box>
         );
 
       default:

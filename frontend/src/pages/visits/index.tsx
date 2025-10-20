@@ -2,6 +2,8 @@ import React from "react";
 import { Route } from 'react-router';
 import { ResourceProps } from "@refinedev/core";
 import { VisitLogging } from "../../components/visits/VisitLogging";
+import { VisitsListPage } from "./list";
+import { VisitDetailsPage } from "./show";
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 export const VisitLoggingPage: React.FC = () => {
@@ -44,10 +46,10 @@ export function VisitsResources(
 export function VisitsRoutes() {
   return (
     <>
-      <Route path="/visits" element={<VisitLoggingPage />} />
+      <Route path="/visits" element={<VisitsListPage />} />
       <Route path="/visits/create" element={<VisitLoggingPage />} />
       <Route path="/visits/edit/:id" element={<VisitLoggingPage />} />
-      <Route path="/visits/show/:id" element={<VisitLoggingPage />} />
+      <Route path="/visits/show/:id" element={<VisitDetailsPage />} />
     </>
   );
 }

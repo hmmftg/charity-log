@@ -6,6 +6,10 @@ import { DashboardPage } from './pages/dashboard';
 import { PatientManagementPage } from './pages/patients';
 import { VisitLoggingPage } from './pages/visits';
 import { DefinitionPage } from './pages/definition';
+import { TherapySchedulePage } from './pages/therapy-schedules';
+import { MedicationPage } from './pages/medications';
+import { DoctorsManagementPage } from './pages/doctors';
+import { getRoleBasedResources } from './resources/RoleBasedResources';
 
 export function AppResources(translate: (key: string, options?: any, defaultMessage?: string) => string):ResourceProps[]{
     return [
@@ -66,6 +70,18 @@ export function AppResources(translate: (key: string, options?: any, defaultMess
                 icon: "📅",
             },
         },
+        // Medications
+        {
+            name: "medications",
+            list: "/medications",
+            create: "/medications/create",
+            edit: "/medications/edit/:id",
+            show: "/medications/show/:id",
+            meta: {
+                label: "Medications",
+                icon: "💊",
+            },
+        },
         ...DefinitionResources(translate),
         ...VisitsResources(translate),
     ];
@@ -89,16 +105,22 @@ export function AppResources(translate: (key: string, options?: any, defaultMess
           <Route path="/visits/show/:id" element={<VisitLoggingPage />} />
           
           {/* Doctor Routes */}
-          <Route path="/doctors" element={<DefinitionPage />} />
-          <Route path="/doctors/create" element={<DefinitionPage />} />
-          <Route path="/doctors/edit/:id" element={<DefinitionPage />} />
-          <Route path="/doctors/show/:id" element={<DefinitionPage />} />
+          <Route path="/doctors" element={<DoctorsManagementPage />} />
+          <Route path="/doctors/create" element={<DoctorsManagementPage />} />
+          <Route path="/doctors/edit/:id" element={<DoctorsManagementPage />} />
+          <Route path="/doctors/show/:id" element={<DoctorsManagementPage />} />
           
-          {/* Therapy Schedule Routes */}
-          <Route path="/therapy-schedules" element={<DefinitionPage />} />
-          <Route path="/therapy-schedules/create" element={<DefinitionPage />} />
-          <Route path="/therapy-schedules/edit/:id" element={<DefinitionPage />} />
-          <Route path="/therapy-schedules/show/:id" element={<DefinitionPage />} />
+                  {/* Therapy Schedule Routes */}
+                  <Route path="/therapy-schedules" element={<TherapySchedulePage />} />
+                  <Route path="/therapy-schedules/create" element={<TherapySchedulePage />} />
+                  <Route path="/therapy-schedules/edit/:id" element={<TherapySchedulePage />} />
+                  <Route path="/therapy-schedules/show/:id" element={<TherapySchedulePage />} />
+                  
+                  {/* Medication Routes */}
+                  <Route path="/medications" element={<MedicationPage />} />
+                  <Route path="/medications/create" element={<MedicationPage />} />
+                  <Route path="/medications/edit/:id" element={<MedicationPage />} />
+                  <Route path="/medications/show/:id" element={<MedicationPage />} />
           
           {DefinitionRoutes()}
           {VisitsRoutes()}

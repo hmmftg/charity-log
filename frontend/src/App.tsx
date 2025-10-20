@@ -40,7 +40,8 @@ import { AppResources, AppRoutes } from "./resources";
 import { AuthPagesRoutes } from "./pages/auth";
 import { TitleHandler } from "./title";
 import { DirectionalProvider } from "./rtl";
-import { dataProviders } from "./providers/data"
+import { dataProviders } from "./providers/data";
+import { DynamicRefine } from "./components/DynamicRefine";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -105,9 +106,8 @@ function App() {
               TransitionComponent={Fade}
             >
                 <DevtoolsProvider>
-                  <Refine
+                  <DynamicRefine
                     dataProvider={dataProviders()}
-                    resources={AppResources(i18nProvider.translate)}
                     notificationProvider={useNotificationProvider}
                     routerProvider={routerBindings}
                     authProvider={authProvider}
@@ -152,7 +152,7 @@ function App() {
                     <RefineKbar />
                     <UnsavedChangesNotifier />
                     <DocumentTitleHandler />
-                  </Refine>
+                  </DynamicRefine>
                   <DevtoolsPanel />
                 </DevtoolsProvider>
               </RefineSnackbarProvider>

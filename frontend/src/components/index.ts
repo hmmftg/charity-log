@@ -5,3 +5,8 @@ export { PatientList } from "./patient/PatientList";
 export { Dashboard } from "./dashboard/Dashboard";
 export { VisitLogging } from "./visits/VisitLogging";
 export { AdminDashboard, DoctorDashboard, NurseDashboard, PatientDashboard } from "./dashboard/RoleBasedDashboards";
+export { TherapyScheduleManagement } from "./therapy/TherapyScheduleManagement";
+export { MedicationManagement } from "./medications/MedicationManagement";
+export { FileUpload } from "./file-upload/FileUpload";
+export { RoleBasedSidebar } from "./sidebar/RoleBasedSidebar";
+export { DynamicRefine } from "./DynamicRefine";
