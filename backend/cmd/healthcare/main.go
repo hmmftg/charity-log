@@ -2,8 +2,13 @@ package main
 
 import (
 	"healthcare/cmd/healthcare/docs"
+	"healthcare/controllers/dashboard"
 	"healthcare/controllers/doctors"
+	"healthcare/controllers/medications"
+	"healthcare/controllers/patients"
+	"healthcare/controllers/therapyschedules"
 	"healthcare/controllers/ums"
+	"healthcare/controllers/visits"
 	"healthcare/models"
 	"net/http"
 	"strings"
@@ -54,6 +59,13 @@ func (a Application) AddRoutes(
 	api := rg.Group("api/v1")
 	ums.AddumsRoutes(model, wsParams, rg, api, false)
 	doctors.AdddoctorsRoutes(model, wsParams, roleMap, api, false)
+
+	// Add new healthcare routes
+	patients.AddPatientsRoutes(model, wsParams, roleMap, api, false)
+	visits.SetupRoutes(api)
+	medications.SetupRoutes(api)
+	therapyschedules.SetupRoutes(api)
+	dashboard.SetupRoutes(api)
 	if wsParams.Network[""].Port == wsParams.Network[""].StaticPort && len(wsParams.Specific.StaticBaseUrl) > 0 && len(wsParams.Network[""].StaticPath) > 0 {
 		rg.Static("/"+wsParams.Specific.StaticBaseUrl, wsParams.Network[""].StaticPath)
 
