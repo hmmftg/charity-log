@@ -22,6 +22,7 @@ func AddumsRoutes(
 	}
 	root := rg.Group("/ums")
 	root.POST("/auth/login/", libGin.Gin(env.umsLogin(simulation)))
+	root.POST("/auth/refresh/", libGin.Gin(env.umsRefresh(simulation)))
 	root.POST("/register/", libGin.Gin(env.umsRegister(simulation)))
 	root.PUT("/logout/", libGin.Gin(env.umsLogout(simulation)))
 	api.Use(libGin.Gin(env.UmsIntrospect("service auth middleware", ServiceAuthHandler{})))

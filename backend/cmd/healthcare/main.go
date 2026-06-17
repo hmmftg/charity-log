@@ -10,6 +10,7 @@ import (
 	"healthcare/controllers/ums"
 	"healthcare/controllers/visits"
 	"healthcare/models"
+	"healthcare/utils/api"
 	"net/http"
 	"strings"
 	"time"
@@ -87,6 +88,7 @@ func (a Application) AddRoutes(
 }
 
 func (a *Application) InitGinApp(engine *gin.Engine) {
+	engine.Use(api.RequestIDMiddleware())
 	a.engine = engine
 }
 func (a Application) GetCorsConfig() *cors.Config {

@@ -2,12 +2,14 @@ package patients
 
 import (
 	"healthcare/models"
+
 	"github.com/hmmftg/requestCore/libQuery"
 )
 
-var QueryMap = map[string]libQuery.QueryConfig[models.PatientRow]{
+var QueryMap = map[string]libQuery.QueryCommand{
 	models.QuerySingle: {
-		Query: `--sql
+		Name: models.QuerySingle,
+		Command: `--sql
 			SELECT 
 				p.id,
 				p.profile_id,
@@ -30,12 +32,13 @@ var QueryMap = map[string]libQuery.QueryConfig[models.PatientRow]{
 				p.created_at,
 				p.updated_at
 			FROM public.patients p
-			WHERE p.id = :1
-		`,
-		Params: []string{"id"},
+			WHERE p.id = :1`,
+		Type: libQuery.QuerySingle,
+		Args: []any{"id"},
 	},
 	models.QueryAll: {
-		Query: `--sql
+		Name: models.QueryAll,
+		Command: `--sql
 			SELECT 
 				p.id,
 				p.profile_id,
@@ -58,8 +61,7 @@ var QueryMap = map[string]libQuery.QueryConfig[models.PatientRow]{
 				p.created_at,
 				p.updated_at
 			FROM public.patients p
-			ORDER BY p.created_at DESC
-		`,
-		Params: []string{},
+			ORDER BY p.created_at DESC`,
+		Type: libQuery.QueryAll,
 	},
 }

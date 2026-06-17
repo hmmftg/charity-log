@@ -19,7 +19,7 @@ import {
   LocalHospital as DoctorIcon,
   AccountCircle as PatientIcon,
 } from "@mui/icons-material";
-import { getDemoAccounts } from "../../../providers/ums/authProvider";
+import { getDemoAccounts } from "../../../providers/ums/umsAuthProvider";
 
 export const Login = () => {
   const theme = useTheme();

@@ -9,8 +9,8 @@ func SetupRoutes(r *gin.RouterGroup) {
 	schedules := r.Group("/therapy-schedules")
 	{
 		schedules.POST("", TherapySchedulePostHandler)         // Create new therapy schedule
-		schedules.GET("", TherapyScheduleGetAllHandler)        // Get all therapy schedules with filters
-		schedules.GET("/:id", TherapyScheduleGetHandler)       // Get specific therapy schedule
+		schedules.GET("/all", TherapyScheduleGetAllHandler)
+		schedules.GET("/:id", TherapyScheduleGetHandler)
 		schedules.PUT("/:id", TherapySchedulePutHandler)       // Update therapy schedule
 		schedules.DELETE("/:id", TherapyScheduleDeleteHandler) // Delete therapy schedule
 	}

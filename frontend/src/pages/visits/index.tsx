@@ -4,24 +4,25 @@ import { ResourceProps } from "@refinedev/core";
 import { VisitLogging } from "../../components/visits/VisitLogging";
 import { VisitsListPage } from "./list";
 import { VisitDetailsPage } from "./show";
+import { AppErrorBoundary } from "../../components/AppErrorBoundary";
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 export const VisitLoggingPage: React.FC = () => {
   const handleSaveVisit = (visitData: any) => {
     console.log("Saving visit:", visitData);
-    // Save visit data to backend
   };
 
   const handleCancel = () => {
     console.log("Cancelling visit logging");
-    // Navigate back or reset form
   };
 
   return (
-    <VisitLogging
-      onSaveVisit={handleSaveVisit}
-      onCancel={handleCancel}
-    />
+    <AppErrorBoundary title="Visit logging failed to load">
+      <VisitLogging
+        onSaveVisit={handleSaveVisit}
+        onCancel={handleCancel}
+      />
+    </AppErrorBoundary>
   );
 };
 

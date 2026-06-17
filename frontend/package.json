@@ -19,6 +19,7 @@
     "@refinedev/react-router": "^2.0.2",
     "@refinedev/simple-rest": "^6.0.0",
     "@types/stylis": "^4.2.7",
+    "axios": "^1.18.0",
     "i18next": "^24.2.3",
     "i18next-browser-languagedetector": "^8.2.0",
     "i18next-http-backend": "^3.0.2",
