@@ -246,10 +246,3 @@ type DiagnosisStats struct {
 	Diagnosis string `json:"diagnosis"`
 	Count     int    `json:"count"`
 }
-
-// Query constants
-const (
-	QuerySingle = "single"
-	QueryAll    = "all"
-	QueryStats  = "stats"
-)

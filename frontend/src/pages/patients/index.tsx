@@ -47,6 +47,7 @@ import {
 } from "@mui/icons-material";
 import { useTranslate } from "@refinedev/core";
 import { getMockData } from "../../services/mockApi";
+import { AppErrorBoundary } from "../../components/AppErrorBoundary";
 
 interface Patient {
   id: string;
@@ -81,7 +82,13 @@ interface PatientFormData {
   insurance_number: string;
 }
 
-export const PatientManagementPage: React.FC = () => {
+export const PatientManagementPage: React.FC = () => (
+  <AppErrorBoundary title="Patients failed to load">
+    <PatientManagementContent />
+  </AppErrorBoundary>
+);
+
+const PatientManagementContent: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [isDialogOpen, setIsDialogOpen] = useState(false);

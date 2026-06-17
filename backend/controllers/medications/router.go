@@ -9,8 +9,8 @@ func SetupRoutes(r *gin.RouterGroup) {
 	medications := r.Group("/medications")
 	{
 		medications.POST("", MedicationPostHandler)         // Create new medication
-		medications.GET("", MedicationGetAllHandler)        // Get all medications with filters
-		medications.GET("/:id", MedicationGetHandler)       // Get specific medication
+		medications.GET("/all", MedicationGetAllHandler)
+		medications.GET("/:id", MedicationGetHandler)
 		medications.PUT("/:id", MedicationPutHandler)       // Update medication
 		medications.DELETE("/:id", MedicationDeleteHandler) // Delete medication
 	}

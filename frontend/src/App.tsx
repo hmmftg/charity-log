@@ -33,7 +33,9 @@ dayjs.extend(relativeTime);
 dayjs.extend(jalaliday);
 dayjs.extend(localizedFormat);
 
-import { authProvider } from "./providers/ums/authProvider";
+import { mockAuthProvider, umsAuthProvider } from "./providers/ums/umsAuthProvider";
+import { isMockMode } from "./lib/authStorage";
+import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { Page } from "./pages/layout/page";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import { AppResources, AppRoutes } from "./resources";
@@ -45,6 +47,7 @@ import { DynamicRefine } from "./components/DynamicRefine";
 
 function App() {
   const { t, i18n } = useTranslation();
+  const authProvider = isMockMode() ? mockAuthProvider : umsAuthProvider;
 
   const i18nProvider: I18nProvider = {
     translate: (key, params) => t(key, params).toString(),
@@ -125,9 +128,11 @@ function App() {
                     <Routes>
                       <Route
                         element={
-                          <Page>
-                            <Outlet />
-                          </Page>
+                          <AppErrorBoundary title="Page failed to load">
+                            <Page>
+                              <Outlet />
+                            </Page>
+                          </AppErrorBoundary>
                         }
                       >
                         <Route
