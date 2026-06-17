@@ -131,6 +131,11 @@ apiClient.interceptors.response.use(
       return apiClient.request(config);
     }
 
+    const requestId = config.headers?.get?.("Request-Id");
+    if (requestId) {
+      sessionStorage.setItem("last-request-id", String(requestId));
+    }
+
     return Promise.reject(mapped);
   },
 );

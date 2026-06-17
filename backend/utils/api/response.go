@@ -35,6 +35,11 @@ func WriteDML(c *gin.Context, status int, result any) {
 
 // WriteError writes a standardized error payload.
 func WriteError(c *gin.Context, status int, code, description string) {
+	if rid, ok := c.Get("request_id"); ok {
+		if requestID, isString := rid.(string); isString && requestID != "" {
+			description = description + " (request_id=" + requestID + ")"
+		}
+	}
 	c.JSON(status, gin.H{
 		"errors": []ErrorItem{{
 			Code:        code,

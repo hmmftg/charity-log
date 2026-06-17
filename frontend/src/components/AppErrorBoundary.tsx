@@ -30,6 +30,8 @@ export class AppErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
+      const lastRequestId =
+        this.props.requestId ?? sessionStorage.getItem("last-request-id") ?? undefined;
       return (
         <Box sx={{ p: 3 }}>
           <Paper sx={{ p: 3, maxWidth: 560 }}>
@@ -39,9 +41,9 @@ export class AppErrorBoundary extends Component<Props, State> {
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
               {this.state.error?.message ?? "An unexpected error occurred."}
             </Typography>
-            {this.props.requestId && (
+            {lastRequestId && (
               <Typography variant="caption" color="text.secondary" display="block" sx={{ mb: 2 }}>
-                Request ID: {this.props.requestId}
+                Request ID: {lastRequestId}
               </Typography>
             )}
             <Button variant="contained" onClick={this.handleRetry}>
