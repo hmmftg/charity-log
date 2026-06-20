@@ -1,12 +1,12 @@
 import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
-import { RefineThemedLayoutV2Props } from "@refinedev/mui";
+import { RefineThemedLayoutProps } from "@refinedev/mui";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 
-export const Footer: React.FC<RefineThemedLayoutV2Props> = () => {
+export const Footer: React.FC<RefineThemedLayoutProps> = () => {
   const theme = useTheme();
 
   return (
