@@ -1,13 +1,11 @@
 import React from "react";
 import { useGetIdentity } from "@refinedev/core";
-import { ThemedSiderV2 } from "@refinedev/mui";
+import { ThemedSider } from "@refinedev/mui";
 import { Box, Typography, Chip, useTheme } from "@mui/material";
-import { useRoleBasedResources } from "../../resources/RoleBasedResources";
 
 export const RoleBasedSidebar: React.FC = () => {
   const theme = useTheme();
   const { data: identity } = useGetIdentity();
-  const roleBasedResources = useRoleBasedResources();
 
   const userRole = identity?.role || 'Patient';
   
@@ -40,8 +38,7 @@ export const RoleBasedSidebar: React.FC = () => {
 
       {/* Role-based Navigation */}
       <Box sx={{ flex: 1 }}>
-        <ThemedSiderV2
-          resources={roleBasedResources}
+        <ThemedSider
           Title={({ collapsed }) => (
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Typography
